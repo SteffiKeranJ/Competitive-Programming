@@ -24,7 +24,11 @@ int query(int k) {
 void update(int index, int value) {
 	while (index <=n)
 	{
+		// adds the value to the Binary indexed tree 
+		//while the current index is smaller or equal to n
 		BIT[index] += value;
+		// then move on to the parent
+		// parent can be easily got by incrementing the last set bit of the current index
 		index += index & -index;
 	}
 }
